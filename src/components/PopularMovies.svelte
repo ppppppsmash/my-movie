@@ -2,15 +2,14 @@
   import MovieCard from "./MovieCard.svelte";
 
   export let movies: any[];
-  console.log(movies[0])
 </script>
 
-<h3>Popular Movies</h3>
+<h3 class="text-center">Popular Movies</h3>
 
 <div>
   <div>
     {#each movies as movie}
-      <h1>{movie.title}</h1>
+      <MovieCard {movie} />
     {/each}
   </div>
   

@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import PopularMovies from "../components/PopularMovies.svelte";
 
-	export let data;
+	export let data: any;
 	console.log(data);
 </script>
 

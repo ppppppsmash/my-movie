@@ -15,8 +15,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
         popular: data.results
       }
     }
-
-    //return data
   }
 }
 

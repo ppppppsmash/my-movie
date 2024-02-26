@@ -1,6 +1,8 @@
 <script>
-export let data
-console.log(data)
+	import PopularMovies from "../components/PopularMovies.svelte";
+
+	export let data;
+	console.log(data);
 </script>
 
 <svelte:head>
@@ -9,9 +11,7 @@ console.log(data)
 </svelte:head>
 
 <section>
-	<h1 class="text-3xl text-red">
-		
-	</h1>
+	<PopularMovies movies={data.props.popular} />
 </section>
 
 <style>

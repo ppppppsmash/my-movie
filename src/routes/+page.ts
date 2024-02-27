@@ -1,6 +1,6 @@
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-import type { PageServerLoad } from "./$types"
+import type { PageServerLoad } from "./$types";
 export const prerender = true;
 
 import { PUBLIC_API_KEY } from "$env/static/public";

@@ -1,9 +1,11 @@
 <script>
 	import './styles.css';
+	import Nav from "../components/Nav.svelte"
 </script>
 
 <div class="app">
 	<main>
+		<Nav />
 		<slot />
 	</main>
 </div>

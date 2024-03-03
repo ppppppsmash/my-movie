@@ -1,4 +1,6 @@
 <script>
+  import { goto } from "$app/navigation"
+
   let inputValue = "";
   let active = false;
 
@@ -9,9 +11,16 @@
       active = false;
     }
   }
+
+  const submitSearch = () => {
+    goto(`/search/${inputValue}`)
+  }
 </script>
 
-<form class="relative w-[30%] m-4">
+<form
+  on:submit|preventDefault={submitSearch}
+  class="relative w-[42%] m-4"
+>
   {#if !active}
   <label
     for="search_movie"
@@ -23,16 +32,20 @@
 
   <input
     class="w-full border-none outline-none px-[2px] py-1 font-bold rounded-md transition-all"
+    class:selected={active ? '' : ''}
     name="search_movie"
     type="text"
     bind:value={inputValue}
     on:focus={() => (active = true)}
     on:blur={cancelInactive}
   />
+
+  {#if inputValue}
   <button
     class="text-[11px] py-4 text-white font-bold border-none absolute bottom-1/2 right-0 translate-y-1/2 h-full
-      cursor-pointer rounded-r-[10px] bg-indigo-600"
+      cursor-pointer rounded-r-[10px] bg-indigo-600 transition-all"
   >
     Search
   </button>
+  {/if}
 </form>

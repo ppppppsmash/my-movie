@@ -1,5 +1,5 @@
-<script>
-  export let movie;
+<script lang="ts">
+  export let movie: any;
 </script>
 
 <div>

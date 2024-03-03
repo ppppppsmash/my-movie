@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PopularMovies from "../components/PopularMovies.svelte";
+	import SearchMovies from "../components/SearchMovies.svelte";
 
 	export let data: any;
 </script>
@@ -10,5 +11,6 @@
 </svelte:head>
 
 <section>
+	<SearchMovies />
 	<PopularMovies movies={data.props.popular} />
 </section>

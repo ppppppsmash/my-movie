@@ -1,5 +1,6 @@
 <script>
-  import { goto } from "$app/navigation"
+  import { goto } from "$app/navigation";
+  import { fly } from "svelte/transition";
 
   let inputValue = "";
   let active = false;
@@ -23,6 +24,8 @@
 >
   {#if !active}
   <label
+    in:fly={{y: -10, duration: 500 }}
+    out:fly={{y: -10, duration: 500 }}
     for="search_movie"
     class="absolute top-1/2 left-0 -translate-y-1/2 px-4 pointer-events-none"
   >
@@ -44,6 +47,8 @@
   <button
     class="text-[11px] py-4 text-white font-bold border-none absolute bottom-1/2 right-0 translate-y-1/2 h-full
       cursor-pointer rounded-r-[10px] bg-indigo-600 transition-all"
+    out:fly={{x: 0, duration: 500 }}
+    in:fly={{x: 20, duration: 500 }}
   >
     Search
   </button>

@@ -4,7 +4,11 @@
 
 <div>
   <div class="flex flex-col justify-around p-4">
-    <a href={`/movie/${movie.id}`}>
+    <a
+      data-sveltekit-noscroll
+      data-sveltekit-preload-data
+      href={`/movie/${movie.id}`}
+    >
       <img
         class="w-full h-[30vh] object-cover rounded-2xl mb-4"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

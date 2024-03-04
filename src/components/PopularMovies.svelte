@@ -1,5 +1,6 @@
 <script lang="ts">
   import MovieCard from "./MovieCard.svelte";
+  import { fly } from "svelte/transition";
 
   export let movies: any[];
 </script>

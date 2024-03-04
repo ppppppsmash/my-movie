@@ -1,8 +1,14 @@
 <script lang="ts">
+  import { fly } from "svelte/transition";
+
   export let data: any;
 </script>
 
-<section class="my-8 px-[20%]">
+<section
+  class="my-8 px-[20%]"
+  in:fly={{ y: 50, duration: 500, delay: 500 }}
+	out:fly={{ duration: 500 }}
+>
   <div class="w-full">
     <img
       class="w-full rounded-2xl"
